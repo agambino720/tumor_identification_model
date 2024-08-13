@@ -1,10 +1,17 @@
-## Overview
-This project addresses a significant challenge in the medical field: the accurate and timely detection of brain tumors from MRI images. Brain tumors can be life-threatening, and early detection is critical for improving patient outcomes and survival rates. However, the manual classification of brain tumors by radiologists is time-consuming and prone to human error, particularly in high-pressure environments. By leveraging convolutional neural networks (CNNs), this project aims to assist medical professionals in accurately identifying and classifying brain tumors into three types—glioma, meningioma, and pituitary tumors—as well as distinguishing these from normal brain tissue.
+# Identify Tumors with CNNS Using MRIs
+
+
+## Elevator Pitch
+This project aims to address the critical challenge of early brain tumor detection using MRI images by developing CNN models to classify brain scans into tumor and non-tumor categories. Leveraging a dataset of diverse MRI scans including images of three different brain tumor types and nontumor brains, the best-performing model achieved a recall of 86.84% for tumor cases, demonstrating its potential to assist in timely and accurate medical diagnoses, though further refinement is needed to improve its precision and handling of non-tumor cases. The early identification of brain tumors is crucial as it leads to increased treatment options and overall better patient outcomes.  
+
+
+## Business Understanding
+Brain tumors present a critical challenge in the medical field due to their complexity and the vital importance of early and accurate diagnosis. Early detection of brain tumors is crucial for improving patient outcomes and survival rates. As studies have shown, "Catching tumors early often allows for more treatment options. Some early tumors may have signs and symptoms that can be noticed, but this is not always the case" (Cancer.org, n.d.). "Enhancing the accuracy and efficiency of early-stage detection can significantly impact treatment planning and prognostic evaluation" (Cancer.org, n.d.). The real-world problem this project aims to solve is the need for a reliable and efficient method to accurately classify different types of brain tumors from MRI scans. Given the subtle differences between various tumor types and normal brain tissue, manual classification by radiologists can be time-consuming and prone to error, especially in high-pressure environments. This project seeks to address these challenges by developing a tool that assists in the accurate and rapid classification of brain tumors, ultimately supporting better clinical decision-making and improving patient care.
 
 The utility of this model lies in its potential to serve as a decision-support tool in clinical settings. It can reduce the cognitive load on radiologists, speed up the diagnostic process, and ensure that even subtle indications of tumors are flagged for further examination. By integrating AI into diagnostic workflows, healthcare providers can improve diagnostic accuracy and potentially lower healthcare costs associated with extensive testing. This project is especially important in regions with limited access to specialized medical professionals, where an AI-driven tool could make a significant difference in patient care.
 
 
-## Data Source
+## Data Source and Understanding
 The dataset used in this project is sourced from Kaggle and contains MRI images categorized into four classes: glioma_tumor, meningioma_tumor, pituitary_tumor, and normal. Despite some limitations, such as class imbalance and a relatively small dataset size, the data proved to be effective in developing a binary classification model that can identify tumors with reasonable accuracy. The dataset’s class imbalance—where normal brain images are underrepresented compared to tumor images—posed a challenge for nontumor identification. Additionally the limited data size posed challenges for multiple classification, leading to models that struggled to differentiate between the different tumor types. However, for binary classification (tumor vs. non-tumor), the data was more suitable and enabled the creation of a model that performs well in identifying tumor cases, even if it struggles somewhat with normal cases.
 
 
@@ -55,7 +62,7 @@ The dataset used in this project is sourced from Kaggle and contains MRI images 
 
   
 ## Final Model Performance on Evaluation Data
-The final binary classification model achieved a test loss of 0.1526 and a test accuracy of 92.26%. It was particularly effective in identifying tumor cases, with a recall of 0.8684 and a precision of 0.8684, making it a reliable tool for assisting in tumor detection. However, the model struggled with non-tumor cases, achieving a recall of only 0.20. These metrics imply that while the model is effective in detecting tumors, it has limitations in distinguishing non-tumor cases from tumors, which could lead to false positives.
+The final binary classification model achieved a test loss of 0.1526 and a test accuracy of 92.26%, outperforming the baseline CNN model as well as other prior iterations. It was particularly effective in identifying tumor cases, with a recall of 0.8684 and a precision of 0.8684, making it a reliable tool for assisting in tumor detection. However, the model struggled with non-tumor cases, achieving a recall of only 0.20. These metrics imply that while the model is effective in detecting tumors, it has limitations in distinguishing non-tumor cases from tumors, which could lead to false positives.
 
 The implications of these metrics are significant. The high recall for tumor cases suggests that the model is well-suited for deployment in settings where missing a tumor diagnosis could have severe consequences. However, the lower precision for non-tumor cases indicates that the model may require further refinement to reduce the number of false positives. In practice, this model would be most useful as an initial screening tool, flagging potential tumor cases for further review by a specialist.
 
@@ -64,6 +71,10 @@ The implications of these metrics are significant. The high recall for tumor cas
 Recall was prioritized as the most important metric because, in the context of brain tumor detection, it is crucial to minimize the number of false negatives. Missing a tumor diagnosis could delay treatment and negatively impact patient outcomes. Precision was the second most important metric, as it ensures that when the model predicts a tumor, it is likely correct, reducing unnecessary follow-up procedures.
 
 The final binary CNN model was chosen based on its strong performance in recall and precision, particularly in detecting tumor cases. Its high recall rate makes it a valuable tool for ensuring that most tumors are detected early, which is critical for effective treatment. The model’s utility lies in its ability to assist radiologists by providing a reliable second opinion, especially in ambiguous cases, thereby enhancing the overall diagnostic process. While the model is not perfect, its integration into clinical workflows could significantly improve the speed and accuracy of brain tumor diagnosis.
+
+
+## Recommendations Use of Final Model
+The final model is best suited as a decision-support tool in clinical settings, where its high recall for detecting tumor cases can assist medical professionals in identifying potential tumors from MRI scans. It should be deployed as an initial screening tool to flag scans that require closer examination, helping to reduce the workload on radiologists and ensuring that fewer potential tumors are missed. Additionally, the model can provide a valuable second opinion in ambiguous cases, enhancing diagnostic accuracy and patient outcomes. Integration into existing diagnostic workflows can prioritize high-risk cases for faster intervention, while also serving as an educational resource for training radiologists. In regions with limited access to specialized medical professionals, the model can be particularly valuable in local clinics, where it can monitor at-risk patients and refer suspicious cases to larger medical centers. However, it is crucial that the model be used as an aid, complementing the expertise of medical professionals rather than replacing it, to ensure the highest standards of patient care.
 
 
 ## Repository Structure
@@ -191,6 +202,7 @@ Run the following command to evaluate the multiclass classification model:
 jupyter nbconvert --to notebook --execute multiclass_model_eval.ipynb
 ```
 
+
 ## Links
 
 **Data:**
@@ -200,3 +212,8 @@ jupyter nbconvert --to notebook --execute multiclass_model_eval.ipynb
 **Presentation**
 
 - https://docs.google.com/presentation/d/10hnycbJEGqjcC5EfjqJc9wBegxfJlWwF0jMu7nQ9ot4/edit?usp=sharing
+
+
+## References
+
+- American Cancer Society. (n.d.). Brain and Spinal Cord Tumors in Adults - Detection, Diagnosis, and Staging. Retrieved from https://www.cancer.org/cancer/types/brain-spinal-cord-tumors-adults/detection-diagnosis-staging.html
