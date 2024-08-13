@@ -1,4 +1,4 @@
-# Identify Tumors with CNNS Using MRIs
+# Identify Brain Tumors with CNNS Using MRIs
 
 
 ## Elevator Pitch
