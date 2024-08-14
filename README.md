@@ -92,7 +92,8 @@ The final model is best suited as a decision-support tool in clinical settings, 
 - **README.md:** Project overview and instructions
 - **brain_tumor_identification.ipynb:** Original notebook containing all data science steps
 - **requirements.txt:** Python packages required to run the project
-- **brain_image.png** README header image
+- **brain_image.png:** README header image
+- **tumor_identification_presentation.pdf:** Project presentation slides
 
 
 ## Reproducibility Script
