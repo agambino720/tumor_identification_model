@@ -1,4 +1,6 @@
-# Identify Brain Tumors with CNNS Using MRIs
+![Project Header](brain_image.png)
+
+# Identifying Brain Tumors with CNNS Using MRIs
 
 
 ## Elevator Pitch
@@ -37,14 +39,17 @@ The dataset used in this project is sourced from Kaggle and contains MRI images 
 - Data Augmentation: Techniques such as rotation, zoom, and flip were applied to increase the diversity of the training data and help the model generalize better.
 
 - Train-Validation-Test Split: The data was split into training, validation, and test sets, ensuring that each class was proportionally represented in each split.
+  
 
 2. **Binary Model Training and Validation:**
 
 - Multiple CNN architectures were trained and tested, starting with a baseline model and progressively adding more layers, filters, and regularization techniques such as dropout.
 
+
 3. **Binary Model Evaluation:**
 
 - The best-performing model was evaluated on the holdout test set to confirm its effectiveness. Metrics such as recall, precision, and F1-score were calculated to assess the model’s performance in detecting tumor cases accurately.
+
   
 4. **Multiclass Classification Preprocessing:**
 
@@ -52,9 +57,11 @@ The dataset used in this project is sourced from Kaggle and contains MRI images 
   
 - Data Cleaning and Normalization: Similar preprocessing steps were applied, but the focus shifted to preparing the data for distinguishing between three tumor types and normal brain tissue.
 
+
 5. **Multiclass Model Training and Validation:**
 
 - Multiple CNN models were trained and tested to classify images into four categories. However, the models faced significant challenges due to the dataset’s limitations, leading to lower accuracy and recall for some classes.
+
 
 6. **Multiclass Model Evaluation:**
 
@@ -73,7 +80,7 @@ Recall was prioritized as the most important metric because, in the context of b
 The final binary CNN model was chosen based on its strong performance in recall and precision, particularly in detecting tumor cases. Its high recall rate makes it a valuable tool for ensuring that most tumors are detected early, which is critical for effective treatment. The model’s utility lies in its ability to assist radiologists by providing a reliable second opinion, especially in ambiguous cases, thereby enhancing the overall diagnostic process. While the model is not perfect, its integration into clinical workflows could significantly improve the speed and accuracy of brain tumor diagnosis.
 
 
-## Recommendations Use of Final Model
+## Recommended Use of Final Model
 The final model is best suited as a decision-support tool in clinical settings, where its high recall for detecting tumor cases can assist medical professionals in identifying potential tumors from MRI scans. It should be deployed as an initial screening tool to flag scans that require closer examination, helping to reduce the workload on radiologists and ensuring that fewer potential tumors are missed. Additionally, the model can provide a valuable second opinion in ambiguous cases, enhancing diagnostic accuracy and patient outcomes. Integration into existing diagnostic workflows can prioritize high-risk cases for faster intervention, while also serving as an educational resource for training radiologists. In regions with limited access to specialized medical professionals, the model can be particularly valuable in local clinics, where it can monitor at-risk patients and refer suspicious cases to larger medical centers. However, it is crucial that the model be used as an aid, complementing the expertise of medical professionals rather than replacing it, to ensure the highest standards of patient care.
 
 
@@ -85,6 +92,7 @@ The final model is best suited as a decision-support tool in clinical settings, 
 - **README.md:** Project overview and instructions
 - **brain_tumor_identification.ipynb:** Original notebook containing all data science steps
 - **requirements.txt:** Python packages required to run the project
+- **brain_image.png** README header image
 
 
 ## Reproducibility Script
