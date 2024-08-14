@@ -218,7 +218,7 @@ jupyter nbconvert --to notebook --execute multiclass_model_eval.ipynb
 
 - https://www.kaggle.com/datasets/thomasdubail/brain-tumors-256x256/data
 
-**Presentation**
+**Presentation:**
 
 - https://docs.google.com/presentation/d/10hnycbJEGqjcC5EfjqJc9wBegxfJlWwF0jMu7nQ9ot4/edit?usp=sharing
 
